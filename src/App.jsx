@@ -9,8 +9,13 @@ function App() {
   ]);
 
   const deleteItems = (id) => {
-    const filteredMovies = movies.filter((movie) => movie.id !== id);
-    setMovies(filteredMovies);
+    // const filteredMovies = movies.filter((movie) => movie.id !== id);
+    // setMovies(filteredMovies);
+    setMovies((prew) => {
+      return prew.filter((event) => {
+        return event.id !== id;
+      });
+    });
   };
 
   return (
